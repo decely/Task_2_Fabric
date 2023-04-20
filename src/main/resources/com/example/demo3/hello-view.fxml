@@ -2,12 +2,35 @@
 
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 
-
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.14-internal" fx:controller="com.example.demo3.HelloController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.HelloController">
    <children>
-      <Canvas fx:id="Canvas1" height="200.0" width="200.0" />
-      <Button onAction="#OnStart" mnemonicParsing="false" text="Button" />
+      <Canvas fx:id="Canvas1" height="200.0" width="700.0" />
+      <FlowPane prefHeight="114.0" prefWidth="700.0">
+         <children>
+            <ColorPicker fx:id="Picker2">
+               <value>
+                  <Color />
+               </value>
+            </ColorPicker>
+            <TextField fx:id="fabric1" onAction="#SetX" />
+            <ColorPicker fx:id="Picker1" />
+            <Button mnemonicParsing="false" text="Фигура" />
+            <Button mnemonicParsing="false" text="Квадрат" />
+            <Button mnemonicParsing="false" text="Круг" />
+         </children>
+      </FlowPane>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handle" text="Следующая" />
+            <ImageView fx:id="Image1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Button mnemonicParsing="false" onAction="#onNext" text="Предыдущая" />
+            <Button mnemonicParsing="false" onAction="#ImagePlay" text="Play" />
+            <Button mnemonicParsing="false" onAction="#ImageStop" text="Stop" />
+         </children>
+      </HBox>
    </children>
 </VBox>
